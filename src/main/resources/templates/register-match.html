@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Регистрация матча</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container mt-5">
+  <h1>Регистрация матча</h1>
+
+  <!-- Сообщение об ошибке (если есть) -->
+  <div th:if="${error}" class="alert alert-danger mt-3" role="alert">
+    <p th:text="${error}"></p>
+  </div>
+
+  <!-- Форма для регистрации матча -->
+  <div class="card mt-4">
+    <div class="card-header">Введите данные матча</div>
+    <div class="card-body">
+      <form action="/matches/register" method="post" th:object="${match}">
+        <div class="form-group">
+          <label for="season">Сезон:</label>
+          <input type="number" id="season" name="season" th:field="*{season}" class="form-control" required>
+        </div>
+        <div class="form-group">
+          <label for="date">Дата:</label>
+          <input type="date" id="date" name="date" th:field="*{date}" class="form-control" required>
+        </div>
+        <div class="form-group">
+          <label for="homeTeam">Хозяева поля:</label>
+          <input type="text" id="homeTeam" name="homeTeam" th:field="*{homeTeam}" class="form-control" placeholder="Введите название команды" required>
+        </div>
+        <div class="form-group">
+          <label for="awayTeam">Гости:</label>
+          <input type="text" id="awayTeam" name="awayTeam" th:field="*{awayTeam}" class="form-control" placeholder="Введите название команды" required>
+        </div>
+        <div class="form-group">
+          <label for="homeGoals">Голы хозяев:</label>
+          <input type="number" id="homeGoals" name="homeGoals" th:field="*{homeGoals}" class="form-control" required>
+        </div>
+        <div class="form-group">
+          <label for="awayGoals">Голы гостей:</label>
+          <input type="number" id="awayGoals" name="awayGoals" th:field="*{awayGoals}" class="form-control" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Сохранить</button>
+        <a href="/" class="btn btn-secondary ml-2">На главную</a>
+      </form>
+    </div>
+  </div>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

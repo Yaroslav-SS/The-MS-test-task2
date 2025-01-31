@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Матчи</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container">
+  <h1 class="mt-5">Матчи</h1>
+  <table class="table mt-4">
+    <thead>
+    <tr>
+      <th>Сезон</th>
+      <th>Дата игры</th>
+      <th>Хозяева поля</th>
+      <th>Гости</th>
+      <th>Домашние голы</th>
+      <th>Голы на выезде</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="match : ${matches}">
+      <td th:text="${match.season}"></td>
+      <td th:text="${match.date}"></td>
+      <td th:text="${match.homeTeam.name}"></td>
+      <td th:text="${match.awayTeam.name}"></td>
+      <td th:text="${match.homeGoals}"></td>
+      <td th:text="${match.awayGoals}"></td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

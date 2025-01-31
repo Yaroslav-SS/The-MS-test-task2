@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Футбольный турнир</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container">
+  <h1 class="mt-5">Футбольный турнир</h1>
+
+  <!-- Сообщение об успешной регистрации -->
+  <div th:if="${param.success}" class="alert alert-success mt-4" role="alert">
+    Результат успешно сохранён!
+  </div>
+
+  <!-- Кнопка для перехода на страницу регистрации матча -->
+  <div class="card mt-4">
+    <div class="card-header">Регистрация матчей</div>
+    <div class="card-body">
+      <a href="/matches/register" class="btn btn-primary">Перейти к регистрации матча</a>
+    </div>
+  </div>
+
+  <!-- Кнопка для перехода на страницу просмотра турнирной таблицы -->
+  <div class="card mt-4">
+    <div class="card-header">Турнирная таблица</div>
+    <div class="card-body">
+      <a href="/tournament" class="btn btn-primary">Перейти к турнирной таблице</a>
+    </div>
+  </div>
+
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
