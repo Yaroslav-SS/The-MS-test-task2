@@ -55,7 +55,6 @@ public class MatchController {
 
         matchService.saveMatch(match);
 
-        // Редирект на главную страницу с параметром success=true
         return "redirect:/?success=true";
     }
 

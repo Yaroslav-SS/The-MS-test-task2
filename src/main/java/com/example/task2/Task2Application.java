@@ -8,6 +8,6 @@ public class Task2Application {
 
     public static void main(String[] args) {
         SpringApplication.run(Task2Application.class, args);
-        System.out.println("Application started! http://localhost:8080/");
+        System.out.println("Приложение запущено http://localhost:8080/");
     }
 }

@@ -17,7 +17,6 @@ public class Team {
     @Column(nullable = false, unique = true)
     private String name;
 
-    // Дополнительный конструктор для удобства создания команды без id
     public Team(String name) {
         this.name = name;
     }

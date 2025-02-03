@@ -30,7 +30,6 @@ public class Match {
     private int homeGoals;
     private int awayGoals;
 
-    // Конструктор для тестов (без id)
     public Match(int season, LocalDate date, Team homeTeam, Team awayTeam, int homeGoals, int awayGoals) {
         this.season = season;
         this.date = date;
